@@ -85,6 +85,8 @@ input[type="number"]
 	-webkit-animation-iteration-count: 2;
 }
 
+
+
 </style>
 <meta charset=utf-8 />
 
@@ -97,7 +99,7 @@ input[type="number"]
   </div>
   <div id="control" style="position:relative;">
 	<input type="number"   id="aminutes" value = "3" />
-	<image id="setalarm" src="blackstrawberry.png" style="position:absolute;top:6px;width:6%;heigth:6%;"/>
+	<image id="setalarm" src="img/blackstrawberry.png" style="position:absolute;top:6px;width:6%;heigth:6%;"/>
   </div>
   <div id="alarms" style="margin-top:20px;">
   </div>
@@ -177,12 +179,12 @@ setInterval(function(){
 	
 	if(compmesses[a] != null){
 	span.innerHTML = compmesses[a]
-	+ "\t<image onclick=delarm(" + a + ") src='del.png' ></image>";
+	+ "\t<image onclick=delarm(" + a + ") src='img/del.png' ></image>";
 	}
 	else{
 		if(currmesses[a] != undefined){
 		span.innerHTML = currmesses[a] 
-		+ "\t<image onclick=delarm(" + a + ") src='del.png'></image>";
+		+ "\t<image onclick=delarm(" + a + ") src='img/del.png'></image>";
 		}
 	}
 	
