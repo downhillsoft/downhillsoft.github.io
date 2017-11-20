@@ -68,7 +68,7 @@ heigth:6%;
 #main{
 	width:370px;
 	padding:40px;
-	margin:80px auto 90px;
+	margin:110px auto 120px;
 	position:relative;
 }
 
@@ -92,7 +92,7 @@ input[type="number"]{
 
 	#setalarm{
     position:absolute;
-    top:16px;
+    top:12px;
    width:10%;
    heigth:10%;
 }
@@ -151,7 +151,7 @@ input[type="number"]{
   <div id="now">
   </div>
   <div id="control" style="position:relative;">
-	<input type="number"   id="aminutes" value = "3" />
+	<input type="number"   id="aminutes" value = "3" onfocus="delthree()" />
 	<image id="setalarm" src="img/blackstrawberry.png" />
   </div>
   <div id="alarms" style="margin-top:20px;">
@@ -201,10 +201,16 @@ setTimeout(function(){setalarm.setAttribute('class',null);},1000);
 
 setalarm.addEventListener("click",function(){
   var minutes = document.getElementById("aminutes");
+  var min_val = minutes.value;
+
+  if(min_val==0 || min_val==null || min_val==undefined || min_val<0){
+  	min_val=1;
+  }
+
   //var alarmtimet = document.getElementById("textbox1");
   var d = new Date().getTime();
   var n = new Date();
-  alarmtimes.push(new Date(d + (minutes.value*60*1000) ) );
+  alarmtimes.push(new Date(d + (min_val*60*1000) ) );
   starttimes.push(n); 
   
   var astr = alarmtimes[alarmtimes.length-1].toLocaleTimeString();
@@ -216,6 +222,11 @@ setalarm.addEventListener("click",function(){
   btnAnimation();
 });
 
+
+function delthree(){
+	var m = document.getElementById("aminutes");
+	m.value="";
+}
 
 
 setInterval(function(){
