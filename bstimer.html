@@ -114,7 +114,7 @@ input[type="number"]{
  
 /* TRANSITION ANIMATION SET
 --------------------------------------*/
-@-webkit-keyframes rotateArea {
+@-webkit-keyframes rotateStraw {
 	0% {-webkit-transform: rotate(0deg);}
 	100% {-webkit-transform: rotate(360deg);}
 }
@@ -128,9 +128,27 @@ input[type="number"]{
 	100% {-webkit-transform: rotate(0deg);}
 }
 
+@-webkit-keyframes jumpStraw {
+	 0% {-webkit-transform: translateY(2px);}
+	20% {-webkit-transform: translateY(-2px);}
+	40% {-webkit-transform: translateY(2px);}
+	60% {-webkit-transform: translateY(-2px);}
+	80% {-webkit-transform: translateY(2px);}
+   100% {-webkit-transform: translateY(-2px);}
+}
+
+@-webkit-keyframes pompStraw {
+	 0% {-webkit-transform: scale(0.8);}
+	20% {-webkit-transform: scale(1.25);}
+	40% {-webkit-transform: scale(0.8);}
+	60% {-webkit-transform: scale(1.25);}
+	80% {-webkit-transform: scale(0.8);}
+   100% {-webkit-transform: scale(1.25);}
+}
+
 
 .rimg {
-	-webkit-animation-name: rotateArea;
+	-webkit-animation-name: rotateStraw;
 	-webkit-animation-delay: 0.5s;
 	-webkit-animation-duration: 0.5s;
 	-webkit-animation-iteration-count: 2;
@@ -138,6 +156,20 @@ input[type="number"]{
 
 .simg {
 	-webkit-animation-name: shakeStraw;
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 2;
+}
+
+.jimg {
+	-webkit-animation-name: jumpStraw;
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 2;
+}
+
+.pimg {
+	-webkit-animation-name: pompStraw;
 	-webkit-animation-delay: 0.5s;
 	-webkit-animation-duration: 0.5s;
 	-webkit-animation-iteration-count: 2;
@@ -198,7 +230,13 @@ var delarm = function(n){
 
 var btnAnimation = function(){
 
-setalarm.setAttribute('class','simg');
+var anieffs = ['rimg','simg','jimg','pimg'];
+
+//0-3, so 4
+var r = Math.floor( Math.random() * 4 ) ; 
+
+//setalarm.setAttribute('class','pimg');
+setalarm.setAttribute('class',anieffs[r]);
 setTimeout(function(){setalarm.setAttribute('class',null);},1000);
 
 }
