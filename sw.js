@@ -1,12 +1,7 @@
 
 var cacheName = 'dsblackstrawberrycache_v201711231-2';
 
-var urlsToCache = [
-'/bstimer.html'
-,'/memo.txt'
-,'/img/blackstrawberry.png'
-,'del.png'
-];
+var urlsToCache = ['/','/bstimer.html','/memo.txt','/img/blackstrawberry.png','/img/del.png'];
 
 self.addEventListener('install',function(event){
 	event.waitUntil(
