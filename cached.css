@@ -1,9 +1,0 @@
-input[type="number"]
- {
- width: 60px;
- height: 30px;
- font-size: 25px;
- border: none;
- background-color:transparent;
- this will not be cached from now
- }
