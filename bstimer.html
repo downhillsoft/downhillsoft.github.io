@@ -180,6 +180,8 @@ input[type="number"]{
 </style>
 <meta charset=utf-8 />
 
+<script src="/NoSleep.min.js"></script>
+
 <title>Black strawberry timer</title>
 </head>
 <body>
@@ -263,7 +265,25 @@ setalarm.addEventListener("click",function(){
   
   
   btnAnimation();
+
+  //
+  enableNoSleep()
 });
+
+
+var preventLock = "off";
+
+var noSleep = new NoSleep();
+
+function enableNoSleep(){
+ if (preventLock=="off") {
+ 	noSleep.enable();
+ 	preventLock="on";
+ 	}
+
+ 	console.log("preventLock:" + preventLock );
+}
+
 
 
 function delthree(){
